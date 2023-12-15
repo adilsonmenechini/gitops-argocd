@@ -3,7 +3,7 @@
   "userGivenName": "metrics-server",
   "destNamespace": "kube-system",
   "destServer": "https://kubernetes.default.svc",
-  "srcPath": "apps/metrics-server/overlays/ops",
+  "srcPath": "gitops/apps/metrics-server/overlays/ops",
   "srcRepoURL": "https://github.com/adilsonmenechini/gitops-argocd",
   "srcTargetRevision": "",
   "CreateNamespace": true,
