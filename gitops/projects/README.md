@@ -49,7 +49,7 @@ kubectl get secret kube-prometheus-stack-grafana -o jsonpath="{.data.admin-passw
 
 
 
-kubectl -n argocd create secret generic autopilot-secret --from-literal GITHUB_CLIENT_ID=https://github.com/adilsonmenechini/argocd --from-literal GITHUB_CLIENT_SECRET=ghp_YXhxvQojxSnMWvKlxvo4dNprEZyJ1HpHhL --dry-run=client -oyaml > secret/argocd-secret.yaml
+kubectl -n argocd create secret generic autopilot-secret --from-literal GITHUB_CLIENT_ID=https://github.com/adilsonmenechini/gitops-argocd --from-literal GITHUB_CLIENT_SECRET=ghp_YXhxvQojxSnMWvKlxvo4dNprEZyJ1HpHhL --dry-run=client -oyaml > secret/argocd-secret.yaml
 
 cat secret/argocd-secret.yaml | kubectl apply -f -
 aa
