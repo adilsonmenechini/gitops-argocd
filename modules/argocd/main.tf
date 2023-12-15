@@ -82,7 +82,7 @@ data "kubectl_file_documents" "file" {
 }
 
 resource "kubectl_manifest" "apl" {
-     depends_on = [kubernetes_config_map_v1_data.argocd-cm]
+    depends_on = [kubernetes_config_map_v1_data.argocd-cm]
     for_each  = data.kubectl_file_documents.file.manifests
     yaml_body = each.value
     
