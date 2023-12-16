@@ -1,7 +1,7 @@
 {
-  "appName": "ingress-nginx",
-  "userGivenName": "ingress-nginx",
-  "destNamespace": "ingress-nginx",
+  "appName": "nginx-ingress-controller",
+  "userGivenName": "nginx-ingress-controller",
+  "destNamespace": "kube-system",
   "destServer": "https://kubernetes.default.svc",
   "srcPath": "gitops/apps/ingress-nginx/overlays/ops",
   "srcRepoURL": "https://github.com/adilsonmenechini/gitops-argocd",
