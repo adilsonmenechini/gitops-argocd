@@ -5,7 +5,7 @@ variable "cluster_name" {
 
 variable "kubernetes_version" {
   description = "the kubernetes versions of the clusters"
-  default     = "1.24.13"
+  default     = "1.27.3"
 }
 
 variable "kubernetes" {

@@ -61,33 +61,17 @@ resource "helm_release" "argo-workflows" {
   ]
 }
 
-resource "kubernetes_config_map_v1_data" "argocd-cm" {
-  depends_on = [helm_release.argocd]
-  metadata {
-    name      = "argocd-cm"
-    namespace = "argocd"
-  }
+# resource "kubernetes_config_map_v1_data" "argocd-cm" {
+#   depends_on = [helm_release.argocd]
+#   metadata {
+#     name      = "argocd-cm"
+#     namespace = "argocd"
+#   }
 
-  force = true
+#   force = true
 
-  data = {
-    config = file("${path.module}/values/argo-cm.yaml")
-  }
+#   data = {
+#     config = file("${path.module}/values/argo-cm.yaml")
+#   }
 
-}
-
-data "kubectl_file_documents" "file" {
-   
-    content = file("${path.module}/../../gitops/bootstrap/argo-bootstrap.yaml")
-}
-
-resource "kubectl_manifest" "apl" {
-    depends_on = [kubernetes_config_map_v1_data.argocd-cm]
-    for_each  = data.kubectl_file_documents.file.manifests
-    yaml_body = each.value
-    
-}
-
-# resource "kubernetes_manifest" "app" {
-#   manifest = yamldecode(file("${path.module}/../../../gitops/bootstrap/argo-bootstrap.yaml"))
 # }

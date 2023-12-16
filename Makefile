@@ -44,6 +44,7 @@ argocd:
 ##
 ## make clean - remover arquivos terraform
 clean:
+	@rm -rf modules/kind/terraform.* modules/kind/.terraform.* modules/kind/.terraform* modules/kind/plan modules/kind/*-config*
 	@rm -rf modules/terraform.* modules/.terraform.* modules/.terraform* modules/plan 
 update: clean
 
