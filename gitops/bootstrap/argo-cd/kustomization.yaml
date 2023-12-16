@@ -3,16 +3,16 @@ kind: Kustomization
 namespace: argocd
 resources:
 #- github.com/argoproj-labs/argocd-autopilot/manifests/base?ref=v0.4.15
-#- https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/ha/install.yaml
+- https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/ha/install.yaml
 #- https://raw.githubusercontent.com/argoproj-labs/rollout-extension/v0.3.0/manifests/install.yaml
 - ingress.yaml
 
-configMapGenerator:
-- behavior: merge
-  literals:
-  - kustomize.buildOptions="--enable-alpha-plugins --enable-helm --load-restrictor LoadRestrictionsNone"
-  - statusbadge.enabled=true
-  name: argocd-cm
+# configMapGenerator:
+# - behavior: merge
+#   literals:
+#   - kustomize.buildOptions="--enable-alpha-plugins --enable-helm --load-restrictor LoadRestrictionsNone"
+#   - statusbadge.enabled=true
+#   name: argocd-cm
 
 components:
 # extensions controller component
