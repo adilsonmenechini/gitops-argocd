@@ -1,11 +1,11 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-namespace: ingress-nginx
+namespace: kube-system
 helmCharts:
-- name: ingress-nginx
-  releaseName: ingress-nginx
-  version: 3.10.0
-  repo: https://kubernetes-sigs.github.io/ingress-nginx/
+- name: nginx-ingress-controller
+  releaseName: nginx-ingress-controller
+  version: 1.9.4
+  repo: https://charts.bitnami.com/bitnami
   valuesInline:
     controller:
       updateStrategy:
