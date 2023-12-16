@@ -4,33 +4,8 @@ namespace: kube-system
 helmCharts:
 - name: nginx-ingress-controller
   releaseName: nginx-ingress-controller
-  version: 1.9.4
+  version: 9.9.4
   repo: https://charts.bitnami.com/bitnami
   valuesInline:
-    controller:
-      updateStrategy:
-        type: "RollingUpdate"
-        rollingUpdate:
-          maxUnavailable: 1
-      hostPort:
-        enabled: true
-      terminationGracePeriodSeconds: 0
-      service:
-        type: "ClusterIP"
-      watchIngressWithoutClass: true
-      nodeSelector:
-        ingress-ready: "true"
-      tolerations:
-      - key: "node-role.kubernetes.io/master"
-        operator: "Equal"
-        effect: "NoSchedule"
-      - key: "node-role.kubernetes.io/gitops-control-plane"
-        operator: "Equal"
-        effect: "NoSchedule"
-      - key: "node-role.kubernetes.io/control-plane"
-        operator: "Equal"
-        effect: "NoSchedule"
-      publishService:
-        enabled: false
-      extraArgs:
-        publish-status-address: "localhost"
+    service:
+      type: "ClusterIP"
