@@ -12,9 +12,9 @@ configMapGenerator:
 - behavior: merge
   literals:
   - statusbadge.enabled=true
-  #- kustomize.buildOptions="--enable-alpha-plugins --enable-helm --load-restrictor=LoadRestrictionsNone"
+  #- kustomize.buildOptions="--enable-alpha-plugins --enable-helm --load-restrictor LoadRestrictionsNone"
   name: argocd-cm
 
 components:
 # extensions controller component
-#- https://github.com/argoproj-labs/argocd-extensions/manifests
+- https://github.com/argoproj-labs/argocd-extensions/manifests
