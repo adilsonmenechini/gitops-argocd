@@ -5,7 +5,7 @@ resource "helm_release" "argocd" {
   chart            = "argo-cd"
   namespace        = "argocd"
   create_namespace = true
-  version          = "5.34.6"
+  version          = "5.51.6"
   timeout          = 600
 
   values = [file("${path.module}/values/argocd.yaml")]
@@ -25,7 +25,7 @@ resource "helm_release" "argo-rollouts" {
   chart            = "argo-rollouts"
   namespace        = "argocd"
   create_namespace = true
-  version          = "2.31.0"
+  version          = "2.33.0"
   timeout          = 300
 
   lifecycle {
@@ -47,7 +47,7 @@ resource "helm_release" "argo-workflows" {
   chart            = "argo-workflows"
   namespace        = "argocd"
   create_namespace = true
-  version          = "0.29.0"
+  version          = "0.40.1"
   timeout          = 300
 
   lifecycle {
