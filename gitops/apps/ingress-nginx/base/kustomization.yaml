@@ -1,11 +1,29 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-namespace: kube-system
+namespace: ingress-nginx
 helmCharts:
-- name: nginx-ingress-controller
-  releaseName: nginx-ingress-controller
-  version: 9.9.4
-  repo: https://charts.bitnami.com/bitnami
+- name: ingress-nginx
+  releaseName: ingress-nginx
+  version: 4.8.4
+  repo: https://kubernetes.github.io/ingress-nginx
   valuesInline:
-    service:
-      type: "ClusterIP"
+    controller:
+      hostPort:
+        enabled: true
+      terminationGracePeriodSeconds: 0
+      service:
+        type: "NodePort"
+      watchIngressWithoutClass: true
+      nodeSelector:
+        ingress-ready: "true"
+      tolerations:
+      - effect: "NoSchedule"
+        key: "node-role.kubernetes.io/master"
+        operator: "Equal"
+      - effect: "NoSchedule"
+        key: "node-role.kubernetes.io/control-plane"
+        operator: "Equal"
+      publishService:
+        enabled: false
+      extraArgs:
+        publish-status-address: "localhost"
