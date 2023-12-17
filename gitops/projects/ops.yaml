@@ -95,5 +95,4 @@ spec:
           allowEmpty: true
           prune: true
           selfHeal: true
-          Replace: true
 status: {}

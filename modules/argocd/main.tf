@@ -77,3 +77,15 @@ resource "kubernetes_config_map_v1_data" "argocd-cm" {
   }
 
 }
+
+
+resource "helm_release" "argocd-apps" {
+  depends_on = [kubernetes_config_map_v1_data.argocd-cm]
+  chart      = "argocd-apps"
+  name       = "argocd-apps"
+  namespace  = "argocd"
+  repository = "https://argoproj.github.io/argo-helm"
+
+
+  values = [file("${path.module}/values/application.yaml")]
+}
