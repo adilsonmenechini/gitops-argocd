@@ -3,9 +3,11 @@ resource "helm_release" "argocd" {
 
   repository       = "https://argoproj.github.io/argo-helm"
   chart            = "argo-cd"
+  version          = "5.51.6"
+  
   namespace        = "argocd"
   create_namespace = true
-  version          = "5.51.6"
+
   timeout          = 600
 
   values = [file("${path.module}/values/argocd.yaml")]
