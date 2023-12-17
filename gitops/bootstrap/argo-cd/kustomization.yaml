@@ -2,14 +2,13 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: argocd
 resources:
-#- https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/ha/install.yaml
 - ingress.yaml
 
 configMapGenerator:
 - behavior: merge
   literals:
+  - kustomize.buildOptions="--enable-alpha-plugins --enable-helm --load-restrictor LoadRestrictionsNone"
   - statusbadge.enabled=true
-  #- kustomize.buildOptions="--enable-alpha-plugins --enable-helm --load-restrictor LoadRestrictionsNone"
   name: argocd-cm
 
 components:
