@@ -14,13 +14,13 @@ help:
 ## -- k8s --
 ## make k8s - install create/deploy
 k8s:
-	@cd modules/kind && terraform init
-	@cd modules/kind && terraform plan -out=plan
-	@cd modules/kind && terraform apply plan
+	@cd kind && terraform init
+	@cd kind && terraform plan -out=plan
+	@cd kind && terraform apply plan
 
 ## make k8s - destroy k8s
 k8s-destroy:
-	@cd modules/kind && terraform apply -destroy
+	@cd kind && terraform apply -destroy
 
 ## -- modules --
 ## make modules - install create/deploy {kind, argocd metrics e ingress}
@@ -35,9 +35,9 @@ modules-destroy:
 
 ## make argoapp - argocd apps
 argoapp:
-	@cd modules/app && terraform init
-	@cd modules/app && terraform plan -out=plan
-	@cd modules/app && terraform apply plan
+	@cd modules/argo/app && terraform init
+	@cd modules/argo/app && terraform plan -out=plan
+	@cd modules/argo/app && terraform apply plan
 
 ## make argocd - argocd server password and portforward 0.0.0.0:8081
 argocd:
@@ -50,8 +50,9 @@ argocd:
 ##
 ## make clean - remover arquivos terraform
 clean:
-	@rm -rf modules/kind/terraform.* modules/kind/.terraform.* modules/kind/.terraform* modules/kind/plan modules/kind/*-config*
-	@rm -rf modules/terraform.* modules/.terraform.* modules/.terraform* modules/plan 
+	@rm -rf kind/terraform.* kind/.terraform.* kind/.terraform* kind/plan kind/*-config*
+	@rm -rf modules/terraform.* modules/.terraform.* modules/.terraform* modules/plan
+	@rm -rf modules/argo/app/terraform.* modules/argo/app/.terraform.* modules/argo/app/.terraform* modules/argo/app/plan 
 update: clean
 
 ## 

@@ -9,10 +9,10 @@ terraform {
 }
 
 data "kubectl_file_documents" "file" {
-    content = file("${path.module}/../../gitops/bootstrap/argo-bootstrap.yaml")
+  content = file("${path.module}/../../../gitops/bootstrap/argo-bootstrap.yaml")
 }
 
 resource "kubectl_manifest" "apl" {
-    count     = length(data.kubectl_file_documents.file.documents)
-    yaml_body = element(data.kubectl_file_documents.file.documents, count.index)
+  count     = length(data.kubectl_file_documents.file.documents)
+  yaml_body = element(data.kubectl_file_documents.file.documents, count.index)
 }

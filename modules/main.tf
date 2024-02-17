@@ -8,7 +8,6 @@ module "argocd" {
     module.commons
   ]
 
-  source = "./argocd"
+  source = "./argo/argocd"
 
 }
-

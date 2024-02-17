@@ -1,5 +1,6 @@
 resource "kind_cluster" "default" {
-  name           = var.cluster_name
+  count          = var.cluster_counts
+  name           = "${var.cluster_name}0${count.index}"
   wait_for_ready = true
 
   kind_config {
@@ -16,27 +17,21 @@ resource "kind_cluster" "default" {
 
       extra_port_mappings {
         container_port = 80
-        host_port      = 80
+        host_port      = 38081 + count.index
       }
       extra_port_mappings {
         container_port = 443
-        host_port      = 443
+        host_port      = 44431 + count.index
       }
     }
 
-    node {
-      role  = "worker"
-      image = "kindest/node:v${var.kubernetes_version}"
+    dynamic "node" {
+      for_each = { for idx in range(var.worker_counts) : idx => idx }
+      content {
+        role  = "worker"
+        image = "kindest/node:v${var.kubernetes_version}"
+      }
     }
 
-    node {
-      role  = "worker"
-      image = "kindest/node:v${var.kubernetes_version}"
-    }
-
-    node {
-      role  = "worker"
-      image = "kindest/node:v${var.kubernetes_version}"
-    }
   }
 }
