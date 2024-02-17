@@ -1,6 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: argocd-cm-cmp-kustomize-build-with-helm
-data:
-  plugin.yaml: "apiVersion: argoproj.io/v1alpha1\nkind: ConfigManagementPlugin\nmetadata:\n  name: kustomize-build-with-helm\nspec:\n  generate:\n    command: [ \"sh\", \"-c\" ]\n    args: [ \"kustomize build --enable-helm\" ]   \n"
