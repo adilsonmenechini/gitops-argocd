@@ -4,12 +4,8 @@ namespace: argocd
 resources:
 - ingress.yaml
 
-configMapGenerator:
-- behavior: merge
-  literals:
-  #- kustomize.buildOptions="--enable-alpha-plugins --enable-helm --load-restrictor LoadRestrictionsNone"
-  - statusbadge.enabled=true
-  name: argocd-cm
+patches:
+- path: argocd-cm-kustomize-helm-patch.yaml
 
 components:
 - https://github.com/argoproj-labs/argocd-extensions/manifests
