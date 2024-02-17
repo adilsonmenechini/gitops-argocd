@@ -22,6 +22,9 @@ spec:
   source:
     path: gitops/bootstrap
     repoURL: https://github.com/adilsonmenechini/gitops-argocd.git
+    #Custom plugin to enable helm
+    plugin:
+      name: kustomize-build-with-helm
   syncPolicy:
     automated:
       allowEmpty: true
@@ -29,6 +32,6 @@ spec:
       selfHeal: true
     syncOptions:
     - allowEmpty=true
-    -  prune=true
-    -  selfHeal=true
+    - prune=true
+    - selfHeal=true
 
