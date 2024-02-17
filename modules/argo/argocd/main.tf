@@ -27,13 +27,18 @@ resource "helm_release" "argo-rollouts" {
   chart            = "argo-rollouts"
   namespace        = "argocd"
   create_namespace = true
-  version          = "2.33.0"
+  version          = "2.34.3"
   timeout          = 300
 
   lifecycle {
     ignore_changes = [
       namespace
     ]
+  }
+
+  set {
+    name  = "dashboard.enabled"
+    value = "true"
   }
 
   depends_on = [

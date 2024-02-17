@@ -33,6 +33,7 @@ crash.*.log
 # Ignore CLI configuration files
 **/.terraformrc
 **/terraform.rc
+**/.*.lock.hcl
 
 **/*-config
 **/plan
