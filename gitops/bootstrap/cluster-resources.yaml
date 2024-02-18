@@ -29,8 +29,8 @@ spec:
     metadata:
       labels:
 
-        app.kubernetes.io/name: cluster-resources-{{name}}
-      name: cluster-resources-{{name}}
+        app.kubernetes.io/name: cluster-resources-{{cluster.default.name}}
+      name: cluster-resources-{{cluster.default.name}}
       namespace: argocd
     spec:
       destination:
