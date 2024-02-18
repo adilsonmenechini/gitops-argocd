@@ -3,14 +3,11 @@ kind: Kustomization
 namespace: argocd
 resources:
 - https://raw.githubusercontent.com/argoproj-labs/rollout-extension/v0.3.3/manifests/install.yaml
+- https://raw.githubusercontent.com/argoproj/argo-cd/v2.10.1/manifests/ha/install.yaml
 - ingress.yaml
 
-configMapGenerator:
-- behavior: merge
-  literals:
-  - kustomize.buildOptions="--enable-helm --load-restrictor LoadRestrictionsNone"
-  - statusbadge.enabled=true
-  name: argocd-cm
+patches:
+- path: argocd-cm.yaml
 
 components:
 - https://github.com/argoproj-labs/argocd-extensions/manifests
