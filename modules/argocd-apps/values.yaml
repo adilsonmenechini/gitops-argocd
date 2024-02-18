@@ -5,7 +5,7 @@ applications:
   source:
     repoURL: https://github.com/adilsonmenechini/gitops-argocd.git
     targetRevision: HEAD
-    path: gitops/bootstrap/argo-bootstrap.yaml
+    path: gitops/bootstrap/
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd

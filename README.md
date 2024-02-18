@@ -37,9 +37,6 @@
 │       ├── ops.yaml
 │       └── README.md
 ├── kind
-│   ├── k8s00-config
-│   ├── k8s01-config
-│   ├── k8s02-config
 │   ├── main.tf
 │   ├── output.tf
 │   ├── plan
