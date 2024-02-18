@@ -2,23 +2,23 @@ server:
   extraArgs:
   - --insecure
 argo-cd:
-  ## Argo Configs
+  # Argo Configs
   configs:
   # ConfigMap for Config Management Plugins
   # Ref: https://argo-cd.readthedocs.io/en/stable/operator-manual/config-management-plugins/
-  # cmp:
-  #   # -- Create the argocd-cmp-cm configmap
-  #   create: true
+  cmp:
+    # -- Create the argocd-cmp-cm configmap
+    create: true
 
-  #   # -- Annotations to be added to argocd-cmp-cm configmap
-  #   annotations: {}
+    # -- Annotations to be added to argocd-cmp-cm configmap
+    annotations: {}
 
-  #   # -- Plugin yaml files to be added to argocd-cmp-cm
-  #   plugins:
-  #     kustomize-build-with-helm:
-  #       generate:
-  #         command: ["sh", "-c"]
-  #         args: ["kustomize build --enable-helm --load-restrictor LoadRestrictionsNone"]
+    # -- Plugin yaml files to be added to argocd-cmp-cm
+    plugins:
+      kustomize-build-with-helm:
+        generate:
+          command: ["sh", "-c"]
+          args: ["kustomize build --enable-helm --load-restrictor LoadRestrictionsNone"]
 
   ## Repo Server
   repoServer:
