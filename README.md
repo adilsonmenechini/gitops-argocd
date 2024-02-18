@@ -2,39 +2,99 @@
 
 ## ArgoCD 101
 
-
-### kubernetes
-
+##
+```sh
+.
+├── gitops
+│   ├── apps
+│   │   ├── default
+│   │   │   └── argocd
+│   │   │       └── kind-k8s00
+│   │   │           ├── argocd-cm.yaml
+│   │   │           ├── ingress.yaml
+│   │   │           └── kustomization.yaml
+│   │   ├── dev
+│   │   └── ops
+│   │       ├── ingress-nginx
+│   │       │   └── kind-k8s00
+│   │       │       ├── config.json
+│   │       │       └── kustomization.yaml
+│   │       └── metrics-server
+│   │           └── kind-k8s00
+│   │               ├── config.json
+│   │               └── kustomization.yaml
+│   ├── bootstrap
+│   │   ├── argo-bootstrap.yaml
+│   │   ├── argo-cd.yaml
+│   │   ├── cluster-resources
+│   │   │   ├── in-cluster
+│   │   │   │   ├── argocd-ns.yaml
+│   │   │   │   └── README.md
+│   │   │   └── in-cluster.json
+│   │   ├── cluster-resources.yaml
+│   │   └── root.yaml
+│   └── projects
+│       ├── ops.yaml
+│       └── README.md
+├── kind
+│   ├── k8s00-config
+│   ├── k8s01-config
+│   ├── k8s02-config
+│   ├── main.tf
+│   ├── output.tf
+│   ├── plan
+│   ├── provider.tf
+│   ├── terraform.tfstate
+│   └── variables.tf
+├── LICENSE
+├── Makefile
+├── modules
+│   ├── argocd
+│   │   ├── kustomization.yaml
+│   │   └── values.yaml
+│   ├── argocd-apps
+│   │   ├── kustomization.yaml
+│   │   └── values.yaml
+│   ├── argo-rollouts
+│   │   ├── kustomization.yaml
+│   │   └── values.yaml
+│   ├── argo-workflows
+│   │   ├── kustomization.yaml
+│   │   └── values.yaml
+│   ├── ingress-nginx
+│   │   ├── kustomization.yaml
+│   │   └── values.yaml
+│   └── metrics-server
+│       ├── kustomization.yaml
+│       └── values.yaml
+├── README.md
+└── toolkit
+    ├── argo.tf
+    ├── ingress.tf
+    ├── metrics.tf
+    ├── plan
+    ├── provider.tf
+    ├── terraform.tfstate
+    └── variables.tf
 ```
-> cd k8s/kind
+
+### Makefile
+
+```sh
 > make help
 
  ------------------------------------
  Terraform
  ------------------------------------
 
- make init - Terraform init
- make plan - Terraform plan
- make apply - Terraform apply
- make all - Terraform init|plan|apply
- make destroy - Terraform destroy
- make clean - remover arquivos terraform
- 
-```
+ -- k8s --
+ make k8s - install create/deploy
+ make k8s - destroy k8s
 
-### ArgoCD
-```
-> make help
-
- ------------------------------------
- Terraform
- ------------------------------------
-
- make init - Terraform init
- make plan - Terraform plan
- make apply - Terraform apply
- make all - Terraform init|plan|apply
- make destroy - Terraform destroy
+ -- toolkit --
+ make toolkit - install create/deploy {kind, argocd metrics e ingress}
+ make toolkit - destroy toolkit
  make argocd - argocd server password and portforward 0.0.0.0:8081
+
  make clean - remover arquivos terraform
 ```
