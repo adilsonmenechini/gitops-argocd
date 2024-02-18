@@ -1,4 +1,4 @@
-.PHONY: k8s k8s-destroy modules modules-destroy clean
+.PHONY: k8s k8s-destroy toolkit toolkit-destroy clean
 
 help: 
 	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//' 
@@ -22,16 +22,16 @@ k8s:
 k8s-destroy:
 	@cd kind && terraform apply -destroy
 
-## -- modules --
-## make modules - install create/deploy {kind, argocd metrics e ingress}
-modules:
-	@cd modules && terraform init
-	@cd modules && terraform plan -out=plan
-	@cd modules && terraform apply plan
+## -- toolkit --
+## make toolkit - install create/deploy {kind, argocd metrics e ingress}
+toolkit:
+	@cd toolkit && terraform init
+	@cd toolkit && terraform plan -out=plan
+	@cd toolkit && terraform apply plan
 
-## make modules - destroy modules
-modules-destroy:
-	@cd modules && terraform apply -destroy
+## make toolkit - destroy toolkit
+toolkit-destroy:
+	@cd toolkit && terraform apply -destroy
 
 ## make argocd - argocd server password and portforward 0.0.0.0:8081
 argocd:
@@ -45,8 +45,7 @@ argocd:
 ## make clean - remover arquivos terraform
 clean:
 	@rm -rf kind/terraform.* kind/.terraform.* kind/.terraform* kind/plan kind/*-config*
-	@rm -rf modules/terraform.* modules/.terraform.* modules/.terraform* modules/plan
-update: clean
+	@rm -rf toolkit/terraform.* toolkit/.terraform.* toolkit/.terraform* toolkit/plan
 
 ## 
 ## 

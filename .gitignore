@@ -31,9 +31,10 @@ crash.*.log
 # example: *tfplan*
 
 # Ignore CLI configuration files
+**/.terraform
 **/.terraformrc
 **/terraform.rc
 **/.*.lock.hcl
-
+**/.terraform.tfstate.lock.info
 **/*-config
 **/plan

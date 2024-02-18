@@ -1,0 +1,16 @@
+applications:
+- name: bootstrap
+  namespace: argocd
+  project: default
+  source:
+    repoURL: https://github.com/adilsonmenechini/gitops-argocd.git
+    targetRevision: HEAD
+    path: gitops/bootstrap/argo-bootstrap.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  syncPolicy:
+    automated:
+      allowEmpty: true
+      prune: true
+      selfHeal: true

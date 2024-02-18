@@ -19,7 +19,7 @@ spec:
     kind: Application
   project: default
   source:
-    path: gitops/bootstrap/argo-cd
+    path: gitops/apps/default/argocd/kind-k8s00
     repoURL: https://github.com/adilsonmenechini/gitops-argocd.git
   syncPolicy:
     automated:

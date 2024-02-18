@@ -1,1 +1,21 @@
-{"name":"in-cluster","server":"https://kubernetes.default.svc"}
+{
+    "cluster": {
+      "default": [
+        {
+          "name": "in-cluster",
+          "server": "https://kubernetes.default.svc"
+        }
+      ],
+      "dev": [
+        {
+          "name": "teste",
+          "server": "teste.server"
+        },
+        {
+          "name": "teste",
+          "server": "teste.server"
+        }
+      ]
+    }
+  }
+
