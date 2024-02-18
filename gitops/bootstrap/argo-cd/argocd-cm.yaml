@@ -7,4 +7,4 @@ data:
     - name: kustomize-enable-helm
       generate:
         command: [ "sh", "-c" ]
-        args: [ "kustomize build --enable-helm" ]
+        args: [ "kustomize build --enable-helm --load-restrictor LoadRestrictionsNone " ]
