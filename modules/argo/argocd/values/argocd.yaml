@@ -18,7 +18,7 @@ argo-cd:
       kustomize-build-with-helm:
         generate:
           command: ["sh", "-c"]
-          args: ["kustomize build --enable-helm --load-restrictor=LoadRestrictionsNone"]
+          args: ["kustomize build --enable-helm --load-restrictor LoadRestrictionsNone"]
 
   ## Repo Server
   repoServer:
