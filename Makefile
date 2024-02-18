@@ -33,12 +33,6 @@ modules:
 modules-destroy:
 	@cd modules && terraform apply -destroy
 
-## make argoapp - argocd apps
-argoapp:
-	@cd modules/argo/app && terraform init
-	@cd modules/argo/app && terraform plan -out=plan
-	@cd modules/argo/app && terraform apply plan
-
 ## make argocd - argocd server password and portforward 0.0.0.0:8081
 argocd:
 	@echo "---" 
@@ -52,7 +46,6 @@ argocd:
 clean:
 	@rm -rf kind/terraform.* kind/.terraform.* kind/.terraform* kind/plan kind/*-config*
 	@rm -rf modules/terraform.* modules/.terraform.* modules/.terraform* modules/plan
-	@rm -rf modules/argo/app/terraform.* modules/argo/app/.terraform.* modules/argo/app/.terraform* modules/argo/app/plan 
 update: clean
 
 ## 

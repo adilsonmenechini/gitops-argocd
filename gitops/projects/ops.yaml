@@ -36,12 +36,12 @@ metadata:
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
-  goTemplate: true
-  goTemplateOptions: ["missingkey=error"]
+  # goTemplate: true
+  # goTemplateOptions: ["missingkey=error"]
   generators:
   - git:
       files:
-      - path: gitops/apps/**/overlays/ops/config.json
+      - path: gitops/apps/**/ops/config.json
       repoURL: https://github.com/adilsonmenechini/gitops-argocd.git
       requeueAfterSeconds: 20
       revision: ""
