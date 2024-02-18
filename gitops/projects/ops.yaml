@@ -73,8 +73,6 @@ spec:
         path: '{{ srcPath }}'
         repoURL: '{{ srcRepoURL }}'
         targetRevision: '{{ srcTargetRevision }}'
-        plugin:
-          name: kustomize-enable-helm
       syncPolicy:
         automated:
           allowEmpty: true
