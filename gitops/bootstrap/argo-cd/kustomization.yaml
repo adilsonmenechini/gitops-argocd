@@ -8,7 +8,7 @@ resources:
 configMapGenerator:
 - behavior: merge
   literals:
-  #- kustomize.buildOptions="--enable-alpha-plugins --enable-helm --load-restrictor"
+  - kustomize.buildOptions="--enable-helm --load-restrictor=LoadRestrictionsNone"
   - statusbadge.enabled=true
   name: argocd-cm
 
