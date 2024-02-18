@@ -1,6 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: argocd-cm
-data:
-  configManagementPlugins: "- name: kustomize-build-with-helm\n  generate:\n    command: [ \"sh\", \"-c\" ]\n    args: [ \"kustomize build --enable-helm --load-restrictor LoadRestrictionsNone\" ]   \n"

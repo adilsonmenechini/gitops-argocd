@@ -5,8 +5,13 @@ resources:
 - https://raw.githubusercontent.com/argoproj-labs/rollout-extension/v0.3.3/manifests/install.yaml
 - ingress.yaml
 
+configMapGenerator:
+- behavior: merge
+  literals:
+  - kustomize.buildOptions="--enable-helm --load-restrictor LoadRestrictionsNone"
+  - statusbadge.enabled=true
+  name: argocd-cm
+
 components:
 - https://github.com/argoproj-labs/argocd-extensions/manifests
 
-patches:
-- path: argocd-cm.yaml
