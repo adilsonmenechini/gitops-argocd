@@ -29,12 +29,12 @@ spec:
     metadata:
       labels:
 
-        app.kubernetes.io/name: cluster-resources-{{cluster.default.name}}
-      name: cluster-resources-{{cluster.default.name}}
+        app.kubernetes.io/name: cluster-resources-{{name}}
+      name: cluster-resources-{{name}}
       namespace: argocd
     spec:
       destination:
-        server: '{{cluster.default.server}}'
+        server: '{{server}}'
       ignoreDifferences:
       - group: argoproj.io
         jsonPointers:
