@@ -2,7 +2,7 @@
     "cluster": {
       "default": 
         {
-          "name": "incluster",
+          "name": "in-cluster",
           "server": "https://kubernetes.default.svc"
         },
       "dev": [
