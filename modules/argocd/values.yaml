@@ -14,4 +14,5 @@ server:
 
 configs:
   cm:
-    kustomize.buildOptions: --enable-helm
+    kustomize.buildOptions: --enable-helm --load-restrictor LoadRestrictionsNone
+
