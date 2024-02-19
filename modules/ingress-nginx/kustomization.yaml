@@ -6,7 +6,4 @@ helmCharts:
   releaseName: ingress-nginx
   version: 4.9.1
   repo: https://kubernetes.github.io/ingress-nginx
-  # Values files:
   valuesFile: values.yaml
-  # additionalValuesFiles:
-  # - values-file-1.yml
