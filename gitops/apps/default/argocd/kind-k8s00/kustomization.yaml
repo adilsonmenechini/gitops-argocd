@@ -7,8 +7,8 @@ resources:
 - ../../../../../modules/argo-workflows
 - ingress.yaml
 
-patches:
-- path: argocd-cm.yaml
+# patches:
+# - path: argocd-cm.yaml
 
 components:
 - https://github.com/argoproj-labs/argocd-extensions/manifests
