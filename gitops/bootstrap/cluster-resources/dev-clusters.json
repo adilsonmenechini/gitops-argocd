@@ -1,13 +1,14 @@
 {
-    "cluster":  [
-        {
-          "name": "teste-00",
-          "server": "teste.server"
-        },
-        {
-          "name": "teste-02",
-          "server": "teste02.server"
-        }
-      ]
+  "cluster": {
+    "dev": [
+      {
+        "name": "teste",
+        "server": "teste.server"
+      },
+      {
+        "name": "teste",
+        "server": "teste.server"
+      }
+    ]
   }
-
+}
