@@ -1,9 +1,9 @@
 {
-  "appName": "ingress-nginx",
-  "userGivenName": "ingress-nginx",
-  "destNamespace": "ingress-nginx",
+  "appName": "metrics-server",
+  "userGivenName": "metrics-server",
+  "destNamespace": "kube-system",
   "destServer": "https://kubernetes.default.svc",
-  "srcPath": "gitops/apps/ops/ingress-nginx/kind-k8s00",
+  "srcPath": "gitops/apps/dev/ops/metrics-server/kind-k8s00",
   "srcRepoURL": "https://github.com/adilsonmenechini/gitops-argocd",
   "srcTargetRevision": "",
   "CreateNamespace": true,

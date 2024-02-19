@@ -5,7 +5,7 @@ metadata:
     argocd.argoproj.io/sync-options: PruneLast=true
     argocd.argoproj.io/sync-wave: "-2"
   creationTimestamp: null
-  name: ops
+  name: common
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
@@ -13,7 +13,7 @@ spec:
   clusterResourceWhitelist:
   - group: '*'
     kind: '*'
-  description: ops project
+  description: common project
   destinations:
   - namespace: '*'
     server: '*'
@@ -31,7 +31,7 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "0"
   creationTimestamp: null
-  name: ops
+  name: common
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
@@ -41,7 +41,7 @@ spec:
   generators:
   - git:
       files:
-      - path: gitops/apps/ops/**/config.json
+      - path: gitops/apps/**/common/**/config.json
       repoURL: https://github.com/adilsonmenechini/gitops-argocd.git
       requeueAfterSeconds: 20
       revision: ""
@@ -57,7 +57,7 @@ spec:
     metadata:
       labels:
         app.kubernetes.io/name: '{{ appName }}'
-      name: ops-{{ userGivenName }}
+      name: common-{{ userGivenName }}
       namespace: argocd
     spec:
       destination:
@@ -68,7 +68,7 @@ spec:
         jsonPointers:
         - /status
         kind: Application
-      project: ops
+      project: common
       source:
         path: '{{ srcPath }}'
         repoURL: '{{ srcRepoURL }}'
