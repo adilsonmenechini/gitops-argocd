@@ -3,6 +3,11 @@ resource "kind_cluster" "default" {
   name           = "${var.cluster_name}0${count.index}"
   wait_for_ready = true
 
+  networking{
+    api_server_address = "127.0.0.1"
+    api_server_port = 64431 + count.index
+  }
+
   kind_config {
     kind        = "Cluster"
     api_version = "kind.x-k8s.io/v1alpha4"
