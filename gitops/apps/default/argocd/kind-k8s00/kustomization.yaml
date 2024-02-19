@@ -4,7 +4,7 @@ namespace: argocd
 resources:
 - ../../../../../modules/argocd
 - ../../../../../modules/argo-rollouts
-- ../../../../../modules/argo-workflows
+#- ../../../../../modules/argo-workflows
 - ingress.yaml
 
 components:
