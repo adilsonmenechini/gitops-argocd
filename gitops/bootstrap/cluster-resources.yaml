@@ -29,12 +29,12 @@ spec:
     metadata:
       labels:
 
-        app.kubernetes.io/name: cluster-resources-{{.name}}
-      name: cluster-resources-{{.name}}
+        app.kubernetes.io/name: cluster-resources-{{cluster.default.name}}
+      name: cluster-resources-{{cluster.default.name}}
       namespace: argocd
     spec:
       destination:
-        server: '{{server}}'
+        server: '{{cluster.default.server}}'
       ignoreDifferences:
       - group: argoproj.io
         jsonPointers:
@@ -42,7 +42,7 @@ spec:
         kind: Application
       project: default
       source:
-        path: gitops/bootstrap/cluster-resources/{{cluster.default}}
+        path: gitops/bootstrap/cluster-resources/
         repoURL: https://github.com/adilsonmenechini/gitops-argocd.git
       syncPolicy:
         automated:
