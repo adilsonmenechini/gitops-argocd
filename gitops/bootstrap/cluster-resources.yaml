@@ -42,7 +42,7 @@ spec:
         kind: Application
       project: default
       source:
-        path: gitops/bootstrap/cluster-resources/default-cluster.json
+        path: gitops/bootstrap/cluster-resources/
         repoURL: https://github.com/adilsonmenechini/gitops-argocd.git
       syncPolicy:
         automated:
