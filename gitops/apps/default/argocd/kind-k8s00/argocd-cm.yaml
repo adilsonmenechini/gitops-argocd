@@ -1,10 +1,15 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: argocd-cm
+  name: kustomize-build-with-helm
 data:
-  configManagementPlugins: |
-    - name: kustomize-enable-helm
+  plugin.yaml: |
+    apiVersion: argoproj.io/v1alpha1
+    kind: ConfigManagementPlugin
+    metadata:
+      name: kustomize-build-with-helm
+    spec:
       generate:
         command: [ "sh", "-c" ]
         args: [ "kustomize build --enable-helm --load-restrictor LoadRestrictionsNone " ]
+
