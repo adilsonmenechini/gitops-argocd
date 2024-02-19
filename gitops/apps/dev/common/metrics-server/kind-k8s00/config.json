@@ -3,7 +3,7 @@
   "userGivenName": "metrics-server",
   "destNamespace": "kube-system",
   "destServer": "https://kubernetes.default.svc",
-  "srcPath": "gitops/apps/dev/ops/metrics-server/kind-k8s00",
+  "srcPath": "gitops/apps/dev/common/metrics-server/kind-k8s00",
   "srcRepoURL": "https://github.com/adilsonmenechini/gitops-argocd",
   "srcTargetRevision": "",
   "CreateNamespace": true,
