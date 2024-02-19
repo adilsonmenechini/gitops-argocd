@@ -4,16 +4,10 @@ namespace: argocd
 resources:
 - ../../../../../modules/argocd
 - ../../../../../modules/argo-rollouts
-#- ../../../../../modules/argo-workflows
-
-
-# components:
-# - https://github.com/argoproj-labs/argocd-extensions/manifests
+- ../../../../../modules/argo-workflows
 
 # patches:
 # - path: ingress.yaml
 #   target:
 #     kind: Ingress
 #     name: argocd-server-ingress
-# - path: ../../../../../modules/argocd
-# - path: ../../../../../modules/argo-rollouts
