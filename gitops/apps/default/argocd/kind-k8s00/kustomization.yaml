@@ -1,12 +1,19 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: argocd
-resources:
-- ../../../../../modules/argocd
-- ../../../../../modules/argo-rollouts
-#- ../../../../../modules/argo-workflows
-- ingress.yaml
+# resources:
+# - ../../../../../modules/argocd
+# - ../../../../../modules/
+# #- ../../../../../modules/argo-workflows
+
 
 components:
 - https://github.com/argoproj-labs/argocd-extensions/manifests
 
+patches:
+- path: ingress.yaml
+  target:
+    kind: Ingress
+    name: argocd-server-ingress
+- path: ../../../../../modules/argocd
+- path: ../../../../../modules/argo-rollouts
