@@ -1,0 +1,11 @@
+{
+  "appName": "argocd-workflows",
+  "userGivenName": "argocd-workflows",
+  "destNamespace": "argocd",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "gitops/apps/default/argocd-workflows/kind-k8s00",
+  "srcRepoURL": "https://github.com/adilsonmenechini/gitops-argocd",
+  "srcTargetRevision": "",
+  "CreateNamespace": true,
+  "labels": null
+}

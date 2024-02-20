@@ -1,0 +1,11 @@
+{
+  "appName": "argocd-rollouts",
+  "userGivenName": "argocd-rollouts",
+  "destNamespace": "argocd",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "gitops/apps/default/argocd-rollouts/kind-k8s00",
+  "srcRepoURL": "https://github.com/adilsonmenechini/gitops-argocd",
+  "srcTargetRevision": "",
+  "CreateNamespace": true,
+  "labels": null
+}
