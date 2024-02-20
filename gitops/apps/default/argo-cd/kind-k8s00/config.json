@@ -3,7 +3,7 @@
   "userGivenName": "argocd",
   "destNamespace": "argocd",
   "destServer": "https://kubernetes.default.svc",
-  "srcPath": "gitops/apps/default/argocd/kind-k8s00",
+  "srcPath": "gitops/apps/default/argo-cd/kind-k8s00",
   "srcRepoURL": "https://github.com/adilsonmenechini/gitops-argocd",
   "srcTargetRevision": "",
   "CreateNamespace": true,
