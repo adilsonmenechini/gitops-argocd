@@ -1,6 +1,6 @@
 {
-  "appName": "argocd",
-  "userGivenName": "argocd",
+  "appName": "argo-cd",
+  "userGivenName": "argo-cd",
   "destNamespace": "argocd",
   "destServer": "https://kubernetes.default.svc",
   "srcPath": "gitops/apps/default/argo-cd/kind-k8s00",

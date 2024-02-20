@@ -5,4 +5,5 @@ helmCharts:
 - name: argocd-apps
   releaseName: argocd-apps
   repo: https://argoproj.github.io/argo-helm
+  version: 1.6.1
   valuesFile: values.yaml

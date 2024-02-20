@@ -6,5 +6,5 @@ helmCharts:
   releaseName: aargo-rollouts
   version: 2.34.3
   repo: https://argoproj.github.io/argo-helm
-  #valuesFile: values.yaml
+  valuesFile: values.yaml
 
