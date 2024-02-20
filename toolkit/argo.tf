@@ -10,7 +10,7 @@ resource "helm_release" "argocd" {
 
   timeout          = 600
 
-  values = [file("${path.module}/../modules/argocd/values.yaml")]
+  values = [file("${path.module}/../modules/argo-cd/values.yaml")]
 
   lifecycle {
     ignore_changes = [
