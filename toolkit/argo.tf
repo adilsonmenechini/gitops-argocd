@@ -70,21 +70,6 @@ resource "helm_release" "argo-workflows" {
   ]
 }
 
-# resource "kubernetes_config_map_v1_data" "argocd-cm" {
-#   depends_on = [helm_release.argocd]
-#   metadata {
-#     name      = "argocd-cm"
-#     namespace = "argocd"
-#   }
-
-#   force = true
-
-#   data = {
-#     config = file("${path.module}/../modules/argocd/argocd-cm.yaml")
-#   }
-
-# }
-
 
 resource "helm_release" "argocd-apps" {
   depends_on = [helm_release.argo-workflows]
