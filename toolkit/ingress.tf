@@ -12,24 +12,9 @@ resource "helm_release" "nginx_ingress" {
   wait         = true
   force_update = true
 
+  timeout          = 600
+
   values = [file("${path.module}/../modules/ingress-nginx/values.yaml")]
 
   depends_on = [helm_release.metrics_server]
 }
-
-# resource "null_resource" "wait_for_nginx_ingress" {
-#   triggers = {
-#     key = uuid()
-#   }
-#   provisioner "local-exec" {
-#     command = <<EOF
-#       printf "\nWaiting for the nginx ingress controller...\n"
-#       kubectl wait --namespace ${helm_release.nginx_ingress.namespace} \
-#         --for=condition=ready pod \
-#         --selector=app.kubernetes.io/component=controller \
-#         --timeout=180s
-#     EOF
-#   }
-
-#   depends_on = [helm_release.nginx_ingress]
-# }
