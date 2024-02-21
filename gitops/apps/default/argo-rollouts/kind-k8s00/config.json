@@ -1,9 +1,9 @@
 {
-  "appName": "argocd-rollouts",
-  "userGivenName": "argocd-rollouts",
+  "appName": "argo-rollouts",
+  "userGivenName": "argo-rollouts",
   "destNamespace": "argocd",
   "destServer": "https://kubernetes.default.svc",
-  "srcPath": "gitops/apps/default/argocd-rollouts/kind-k8s00",
+  "srcPath": "gitops/apps/default/argo-rollouts/kind-k8s00",
   "srcRepoURL": "https://github.com/adilsonmenechini/gitops-argocd",
   "srcTargetRevision": "",
   "CreateNamespace": true,
