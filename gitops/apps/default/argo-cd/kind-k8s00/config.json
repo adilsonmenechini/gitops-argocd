@@ -1,5 +1,5 @@
 {
-  "appName": "argo-cd",
+  "appName": "argocd",
   "userGivenName": "argo-cd",
   "destNamespace": "argocd",
   "destServer": "https://kubernetes.default.svc",
