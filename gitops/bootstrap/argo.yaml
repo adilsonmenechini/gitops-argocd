@@ -52,4 +52,7 @@ spec:
           selfHeal: true
         syncOptions:
         - allowEmpty=true
+        - prune=true
+        - selfHeal=true
+
 status: {}
