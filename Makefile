@@ -14,7 +14,7 @@ help:
 ## -- k8s --
 ## make k8s - install create/deploy
 k8s:
-	@cd kind && terraform init
+	@cd kind && terraform init -upgrade
 	@cd kind && terraform plan -out=plan
 	@cd kind && terraform apply plan
 
@@ -25,7 +25,7 @@ k8s-destroy:
 ## -- toolkit --
 ## make toolkit - install create/deploy {kind, argocd metrics e ingress}
 toolkit:
-	@cd toolkit && terraform init
+	@cd toolkit && terraform init -upgrade
 	@cd toolkit && terraform plan -out=plan
 	@cd toolkit && terraform apply plan
 
