@@ -3,7 +3,7 @@
   "userGivenName": "argo-rollouts",
   "destNamespace": "argocd",
   "destServer": "https://kubernetes.default.svc",
-  "srcPath": "gitops//bootstrap/argo/argo-rollouts",
+  "srcPath": "gitops/bootstrap/argo/argo-rollouts",
   "srcRepoURL": "https://github.com/adilsonmenechini/gitops-argocd",
   "srcTargetRevision": "",
   "CreateNamespace": true,
