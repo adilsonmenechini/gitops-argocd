@@ -4,6 +4,6 @@ namespace: argocd
 helmCharts:
 - name: argo-workflows
   releaseName: argo-workflows
-  version: 0.40.11
+  version: 0.40.10
   repo: https://argoproj.github.io/argo-helm
   #valuesFile: values.yaml

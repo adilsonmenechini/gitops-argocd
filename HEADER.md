@@ -39,9 +39,7 @@
 ├── kind
 │   ├── main.tf
 │   ├── output.tf
-│   ├── plan
 │   ├── provider.tf
-│   ├── terraform.tfstate
 │   └── variables.tf
 ├── LICENSE
 ├── Makefile
@@ -69,9 +67,7 @@
     ├── argo.tf
     ├── ingress.tf
     ├── metrics.tf
-    ├── plan
     ├── provider.tf
-    ├── terraform.tfstate
     └── variables.tf
 ```
 

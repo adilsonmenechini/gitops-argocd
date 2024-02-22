@@ -39,7 +39,7 @@ argocd:
 	@echo "Password:" 
 	@kubectl get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" -n argocd | base64 --decode ; echo
 	@echo "---" 
-	kubectl port-forward -n argocd svc/argocd-server 8081:80
+	kubectl port-forward -n argocd svc/argo-cd-argocd-server 8081:80
 
 ##
 ## make clean - remover arquivos terraform
