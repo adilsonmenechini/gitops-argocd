@@ -4,5 +4,3 @@ namespace: argocd
 resources:
 - ../../../../modules/argo-cd
 
-patches:
-  path: ../../argo-bootstrap.yaml
