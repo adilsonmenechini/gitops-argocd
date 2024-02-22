@@ -7,14 +7,14 @@ metadata:
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
-  # goTemplate: true
-  # goTemplateOptions: ["missingkey=error"]
+  goTemplate: true
+  goTemplateOptions: ["missingkey=error"]
   generators:
   - git:
       files:
       - path: gitops/bootstrap/argo/**/config.json
       repoURL: https://github.com/adilsonmenechini/gitops-argocd.git
-      requeueAfterSeconds: 20
+      requeueAfterSeconds: 300
       revision: ""
       template:
         metadata: {}
