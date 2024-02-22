@@ -1,7 +1,7 @@
 variable "cluster_counts" {
   description = "Número de clusters"
   type        = number
-  default     = 3  
+  default     = 2
 }
 
 
@@ -13,7 +13,7 @@ variable "cluster_name" {
 variable "worker_counts" {
   description = "worker counts"
   type        = number
-  default     = 2  
+  default     = 1 
 }
 
 
