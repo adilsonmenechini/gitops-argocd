@@ -1,14 +1,9 @@
 {
-  "cluster": {
-    "dev": [
+    "projects": "dev",
+    "cluster":[
       {
-        "name": "teste",
-        "server": "teste.server"
-      },
-      {
-        "name": "teste",
-        "server": "teste.server"
+        "name": "kind-k8s00",
+        "address": "127.0.0.1:64431"
       }
     ]
-  }
 }

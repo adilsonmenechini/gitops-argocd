@@ -1,4 +1,10 @@
 {
-  "name": "in-cluster",
-  "server": "https://kubernetes.default.svc"
+  "projects": "default",
+  "cluster": [
+    {
+      "name": "in-cluster",
+      "address": "127.0.0.1:64431"
+    }
+  ]
+
 }

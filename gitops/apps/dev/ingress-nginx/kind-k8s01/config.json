@@ -1,0 +1,11 @@
+{
+  "appName": "ingress-nginx",
+  "userGivenName": "ingress-nginx",
+  "destNamespace": "ingress-nginx",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "gitops/apps/dev/ingress-nginx/kind-k8s00",
+  "srcRepoURL": "https://github.com/adilsonmenechini/gitops-argocd",
+  "srcTargetRevision": "",
+  "CreateNamespace": true,
+  "labels": null
+}
