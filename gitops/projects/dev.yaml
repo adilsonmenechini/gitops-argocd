@@ -5,7 +5,7 @@ metadata:
     argocd.argoproj.io/sync-options: PruneLast=true
     argocd.argoproj.io/sync-wave: "-2"
   creationTimestamp: null
-  name: common
+  name: dev
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
@@ -13,7 +13,7 @@ spec:
   clusterResourceWhitelist:
   - group: '*'
     kind: '*'
-  description: common project
+  description: dev project
   destinations:
   - namespace: '*'
     server: '*'
@@ -31,7 +31,7 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "0"
   creationTimestamp: null
-  name: common
+  name: dev
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
@@ -41,7 +41,7 @@ spec:
   generators:
   - git:
       files:
-      - path: gitops/apps/**/common/**/config.json
+      - path: gitops/apps/dev/**/config.json
       repoURL: https://github.com/adilsonmenechini/gitops-argocd.git
       requeueAfterSeconds: 20
       revision: ""
@@ -68,7 +68,7 @@ spec:
         jsonPointers:
         - /status
         kind: Application
-      project: common
+      project: dev
       source:
         path: '{{ srcPath }}'
         repoURL: '{{ srcRepoURL }}'
