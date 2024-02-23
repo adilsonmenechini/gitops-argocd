@@ -60,7 +60,7 @@ spec:
     spec:
       destination:
         namespace: '{{ destNamespace }}'
-        server: '{{ destServer }}'
+        name: '{{ destName }}'
       ignoreDifferences:
       - group: argoproj.io
         jsonPointers:

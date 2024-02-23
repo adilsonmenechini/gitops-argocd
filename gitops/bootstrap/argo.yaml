@@ -31,7 +31,7 @@ spec:
     spec:
       destination:
         namespace: '{{ destNamespace }}'
-        server: '{{ destServer }}'
+        name: '{{ destName }}'
       ignoreDifferences:
       - group: argoproj.io
         jsonPointers:
@@ -50,7 +50,6 @@ spec:
           selfHeal: true
         syncOptions:
         - allowEmpty=true
-        - prune=true
-        - selfHeal=true
+
 
 status: {}

@@ -2,7 +2,7 @@
   "appName": "argocd",
   "userGivenName": "argo-cd",
   "destNamespace": "argocd",
-  "destServer": "https://kubernetes.default.svc",
+  "destName": "in-cluster",
   "srcPath": "gitops/bootstrap/argo/argo-cd",
   "srcRepoURL": "https://github.com/adilsonmenechini/gitops-argocd",
   "srcTargetRevision": "",
