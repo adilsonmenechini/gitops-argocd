@@ -1,4 +1,4 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-- ../../../../../../modules/metrics-server
+- https://github.com/adilsonmenechini/gitops-argocd/tree/main/modules/metrics-server
