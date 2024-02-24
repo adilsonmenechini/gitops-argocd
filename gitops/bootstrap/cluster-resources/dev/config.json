@@ -1,5 +1,5 @@
 {
-    "projects": "dev",
+    "project": "dev",
     "cluster":[
       {
         "name": "kind-k8s00",

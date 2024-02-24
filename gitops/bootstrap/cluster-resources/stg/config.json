@@ -1,5 +1,5 @@
 {
-    "projects": "stg",
+    "project": "stg",
     "cluster":[
       {
         "name": "kind-k8s01",
