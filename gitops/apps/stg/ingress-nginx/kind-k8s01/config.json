@@ -2,7 +2,7 @@
   "appName": "ingress-nginx",
   "userGivenName": "ingress-nginx",
   "destNamespace": "ingress-nginx",
-  "destName": "in-cluster",
+  "destName": "kind-k8s01",
   "srcPath": "gitops/apps/stg/ingress-nginx/kind-k8s01",
   "srcRepoURL": "https://github.com/adilsonmenechini/gitops-argocd",
   "srcTargetRevision": "",
