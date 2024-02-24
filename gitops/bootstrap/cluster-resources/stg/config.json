@@ -1,0 +1,9 @@
+{
+    "projects": "stg",
+    "cluster":[
+      {
+        "name": "kind-k8s01",
+        "address": "127.0.0.1:64432"
+      }
+    ]
+}
