@@ -1,9 +1,9 @@
 {
     "project": "dev",
-    "cluster":[
+    "cluster":
       {
         "name": "kind-k8s00",
         "address": "127.0.0.1:64431"
       }
-    ]
+    
 }
