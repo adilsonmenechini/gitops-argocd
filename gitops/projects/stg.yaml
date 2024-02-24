@@ -54,8 +54,8 @@ spec:
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: '{{ appName }}'
-      name: '{{ userGivenName }}'
+        app.kubernetes.io/name: '{{ userGivenName }}-stg-{{ destName }}'
+      name: '{{ userGivenName }}-stg-{{ destName }}'
       namespace: argocd
     spec:
       destination:
